@@ -1,4 +1,3 @@
-```python
 import os
 from pathlib import Path
 
@@ -102,4 +101,3 @@ if __name__ == "__main__":
         port=int(os.environ.get("PORT", 10000)),
         debug=False
     )
-```
