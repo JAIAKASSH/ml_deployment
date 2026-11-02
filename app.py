@@ -1,11 +1,20 @@
 import os
 from pathlib import Path
+from flask_cors import CORS
 
 import joblib
 import numpy as np
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
+
+CORS(app, resources={
+    r"/predict": {
+        "origins": "*",
+        "methods": ["POST"],
+        "allow_headers": ["Content-Type"]
+    }
+})
 
 BASE_DIR = Path(__file__).resolve().parent
 
